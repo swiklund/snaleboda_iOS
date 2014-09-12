@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  Rapportera.h
 //  snaleboda
 //
 //  Created by Wiklund on 2014-09-12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface Rapportera : UIViewController
 
 @end
