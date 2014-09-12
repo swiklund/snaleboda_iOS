@@ -14,14 +14,17 @@
 		CDC18AB719C2CB6B009E55F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC18AB619C2CB6B009E55F5 /* main.m */; };
 		CDC18ABB19C2CB6B009E55F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC18ABA19C2CB6B009E55F5 /* AppDelegate.m */; };
 		CDC18ABE19C2CB6B009E55F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDC18ABC19C2CB6B009E55F5 /* Main.storyboard */; };
-		CDC18AC119C2CB6B009E55F5 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC18AC019C2CB6B009E55F5 /* FirstViewController.m */; };
-		CDC18AC419C2CB6B009E55F5 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC18AC319C2CB6B009E55F5 /* SecondViewController.m */; };
 		CDC18AC619C2CB6B009E55F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC18AC519C2CB6B009E55F5 /* Images.xcassets */; };
 		CDC18ACD19C2CB6B009E55F5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC18ACC19C2CB6B009E55F5 /* XCTest.framework */; };
 		CDC18ACE19C2CB6B009E55F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC18AAA19C2CB6B009E55F5 /* Foundation.framework */; };
 		CDC18ACF19C2CB6B009E55F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC18AAE19C2CB6B009E55F5 /* UIKit.framework */; };
 		CDC18AD719C2CB6B009E55F5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDC18AD519C2CB6B009E55F5 /* InfoPlist.strings */; };
 		CDC18AD919C2CB6B009E55F5 /* snalebodaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC18AD819C2CB6B009E55F5 /* snalebodaTests.m */; };
+		CDC18AE719C2D3FF009E55F5 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC18AE619C2D3FF009E55F5 /* News.m */; };
+		CDC18AEA19C2D435009E55F5 /* Contacts.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC18AE919C2D435009E55F5 /* Contacts.m */; };
+		CDC18AED19C2D470009E55F5 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC18AEC19C2D470009E55F5 /* Report.m */; };
+		CDC18AF019C2E4EC009E55F5 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC18AEF19C2E4EC009E55F5 /* NewsCell.m */; };
+		CDC18AF619C30C7E009E55F5 /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC18AF519C30C7E009E55F5 /* NewsItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,16 +49,22 @@
 		CDC18AB919C2CB6B009E55F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CDC18ABA19C2CB6B009E55F5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CDC18ABD19C2CB6B009E55F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CDC18ABF19C2CB6B009E55F5 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		CDC18AC019C2CB6B009E55F5 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		CDC18AC219C2CB6B009E55F5 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		CDC18AC319C2CB6B009E55F5 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		CDC18AC519C2CB6B009E55F5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CDC18ACB19C2CB6B009E55F5 /* snalebodaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = snalebodaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC18ACC19C2CB6B009E55F5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CDC18AD419C2CB6B009E55F5 /* snalebodaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "snalebodaTests-Info.plist"; sourceTree = "<group>"; };
 		CDC18AD619C2CB6B009E55F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CDC18AD819C2CB6B009E55F5 /* snalebodaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = snalebodaTests.m; sourceTree = "<group>"; };
+		CDC18AE519C2D3FF009E55F5 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		CDC18AE619C2D3FF009E55F5 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		CDC18AE819C2D435009E55F5 /* Contacs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contacs.h; sourceTree = "<group>"; };
+		CDC18AE919C2D435009E55F5 /* Contacts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contacts.m; sourceTree = "<group>"; };
+		CDC18AEB19C2D470009E55F5 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
+		CDC18AEC19C2D470009E55F5 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
+		CDC18AEE19C2E4EC009E55F5 /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
+		CDC18AEF19C2E4EC009E55F5 /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
+		CDC18AF419C30C7E009E55F5 /* NewsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsItem.h; sourceTree = "<group>"; };
+		CDC18AF519C30C7E009E55F5 /* NewsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,12 +127,18 @@
 				CDC18AB919C2CB6B009E55F5 /* AppDelegate.h */,
 				CDC18ABA19C2CB6B009E55F5 /* AppDelegate.m */,
 				CDC18ABC19C2CB6B009E55F5 /* Main.storyboard */,
-				CDC18ABF19C2CB6B009E55F5 /* FirstViewController.h */,
-				CDC18AC019C2CB6B009E55F5 /* FirstViewController.m */,
-				CDC18AC219C2CB6B009E55F5 /* SecondViewController.h */,
-				CDC18AC319C2CB6B009E55F5 /* SecondViewController.m */,
 				CDC18AC519C2CB6B009E55F5 /* Images.xcassets */,
 				CDC18AB119C2CB6B009E55F5 /* Supporting Files */,
+				CDC18AE519C2D3FF009E55F5 /* News.h */,
+				CDC18AE619C2D3FF009E55F5 /* News.m */,
+				CDC18AE819C2D435009E55F5 /* Contacs.h */,
+				CDC18AE919C2D435009E55F5 /* Contacts.m */,
+				CDC18AEB19C2D470009E55F5 /* Report.h */,
+				CDC18AEC19C2D470009E55F5 /* Report.m */,
+				CDC18AEE19C2E4EC009E55F5 /* NewsCell.h */,
+				CDC18AEF19C2E4EC009E55F5 /* NewsCell.m */,
+				CDC18AF419C30C7E009E55F5 /* NewsItem.h */,
+				CDC18AF519C30C7E009E55F5 /* NewsItem.m */,
 			);
 			path = snaleboda;
 			sourceTree = "<group>";
@@ -254,9 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDC18AC419C2CB6B009E55F5 /* SecondViewController.m in Sources */,
 				CDC18ABB19C2CB6B009E55F5 /* AppDelegate.m in Sources */,
-				CDC18AC119C2CB6B009E55F5 /* FirstViewController.m in Sources */,
+				CDC18AEA19C2D435009E55F5 /* Contacts.m in Sources */,
+				CDC18AE719C2D3FF009E55F5 /* News.m in Sources */,
+				CDC18AF019C2E4EC009E55F5 /* NewsCell.m in Sources */,
+				CDC18AED19C2D470009E55F5 /* Report.m in Sources */,
+				CDC18AF619C30C7E009E55F5 /* NewsItem.m in Sources */,
 				CDC18AB719C2CB6B009E55F5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

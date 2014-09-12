@@ -1,5 +1,5 @@
 //
-//  Rapportera.h
+//  News.h
 //  snaleboda
 //
 //  Created by Wiklund on 2014-09-12.
@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Rapportera : UIViewController
+@interface News : UITableViewController
+
+@property NSMutableArray *newsItems;
 
 @end
+

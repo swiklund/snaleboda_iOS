@@ -1,13 +1,13 @@
 //
-//  Kontakter.m
+//  Report.h
 //  snaleboda
 //
 //  Created by Wiklund on 2014-09-12.
 //  Copyright (c) 2014 Wiklund. All rights reserved.
 //
 
-#import "Kontakter.h"
+#import <UIKit/UIKit.h>
 
-@implementation Kontakter
+@interface Report : UIViewController
 
 @end
