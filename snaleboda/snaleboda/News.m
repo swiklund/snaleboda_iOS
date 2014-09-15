@@ -16,53 +16,23 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
 
 @implementation News
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.contentMax = 200;  //Max antal chars i content-text
+    self.contentMax = 200;  //Max num of chars in content-text
     self.newsItems = [[NSMutableArray alloc] init];
     
     [self getNewsFromService];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     return [self.newsItems count];
-}
-
-
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    //[self.startWebView stopLoading];
-    
 }
 
 - (void)configureBasicCell:(NewsCell *)cell atIndexPath:(NSIndexPath *)indexPath {
@@ -89,15 +59,9 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
     [cell.newsText setText:newsText];
 }
 
-
-
-
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self basicCellAtIndexPath:indexPath];
 }
-
 
 - (NewsCell *)basicCellAtIndexPath:(NSIndexPath *)indexPath {
     NewsCell *cell = [self.tableView dequeueReusableCellWithIdentifier:NewsCellIdentifier forIndexPath:indexPath];
@@ -105,8 +69,6 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
     return cell;
 }
 
-
-//Ta reda på height
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     int rowSize = 27;
     int titleSize = 70;
@@ -114,7 +76,7 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
     
     int retHeight = 0;
     int numOfChars = [[self.newsItems[indexPath.row]content] length];  //Total length of item text
-    if( numOfChars > self.contentMax)numOfChars = self.contentMax;
+    if( numOfChars > self.contentMax )numOfChars = self.contentMax;    //Content max initialized in viewdidload
     retHeight = numOfChars/charsPerRow;
     if( retHeight < 1 )retHeight = 1;
     retHeight = retHeight*rowSize+titleSize;
@@ -133,7 +95,6 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
 }
 
 
-
 - (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
     [sizingCell setNeedsLayout];
     [sizingCell layoutIfNeeded];
@@ -142,8 +103,7 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
     return size.height;
 }
 
--(void)getNewsFromService
-{
+-(void)getNewsFromService {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -155,8 +115,7 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
     
     NSString* serviceURL = @"https://snaleboda.azure-mobile.net/tables/news";
     
-    [manager GET:serviceURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject)
-    {
+    [manager GET:serviceURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
         NSLog(@"JSON: %@", responseObject);
 
         for( id item in responseObject)
@@ -167,7 +126,9 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
 
             [self.newsItems addObject:newsItem];
         }
+        
         [self.tableView reloadData];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];

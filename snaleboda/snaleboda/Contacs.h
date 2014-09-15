@@ -10,4 +10,6 @@
 
 @interface Contacs : UITableViewController
 
+@property NSMutableArray *contactItems;
+
 @end

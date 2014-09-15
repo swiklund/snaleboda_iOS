@@ -57,6 +57,8 @@
 		CD50ADA619C6E77E00CC8860 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CD50ACFA19C6E77E00CC8860 /* UIWebView+AFNetworking.m */; };
 		CD50ADB719C6FD9200CC8860 /* ContactsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD50ADB619C6FD9200CC8860 /* ContactsCell.m */; };
 		CD50ADB819C6FD9200CC8860 /* ContactsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD50ADB619C6FD9200CC8860 /* ContactsCell.m */; };
+		CD50ADBE19C717E000CC8860 /* ContactItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CD50ADBD19C717E000CC8860 /* ContactItem.m */; };
+		CD50ADBF19C717E000CC8860 /* ContactItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CD50ADBD19C717E000CC8860 /* ContactItem.m */; };
 		CDC18AAB19C2CB6B009E55F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC18AAA19C2CB6B009E55F5 /* Foundation.framework */; };
 		CDC18AAD19C2CB6B009E55F5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC18AAC19C2CB6B009E55F5 /* CoreGraphics.framework */; };
 		CDC18AAF19C2CB6B009E55F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC18AAE19C2CB6B009E55F5 /* UIKit.framework */; };
@@ -133,6 +135,8 @@
 		CD50ACFA19C6E77E00CC8860 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		CD50ADB519C6FD9200CC8860 /* ContactsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsCell.h; sourceTree = "<group>"; };
 		CD50ADB619C6FD9200CC8860 /* ContactsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsCell.m; sourceTree = "<group>"; };
+		CD50ADBC19C717E000CC8860 /* ContactItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactItem.h; sourceTree = "<group>"; };
+		CD50ADBD19C717E000CC8860 /* ContactItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactItem.m; sourceTree = "<group>"; };
 		CDC18AA719C2CB6B009E55F5 /* snaleboda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snaleboda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC18AAA19C2CB6B009E55F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CDC18AAC19C2CB6B009E55F5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -268,10 +272,12 @@
 		CD50ADBA19C6FDAA00CC8860 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				CD50ADB519C6FD9200CC8860 /* ContactsCell.h */,
-				CD50ADB619C6FD9200CC8860 /* ContactsCell.m */,
 				CDC18AE819C2D435009E55F5 /* Contacs.h */,
 				CDC18AE919C2D435009E55F5 /* Contacts.m */,
+				CD50ADB519C6FD9200CC8860 /* ContactsCell.h */,
+				CD50ADB619C6FD9200CC8860 /* ContactsCell.m */,
+				CD50ADBC19C717E000CC8860 /* ContactItem.h */,
+				CD50ADBD19C717E000CC8860 /* ContactItem.m */,
 			);
 			name = Contacts;
 			sourceTree = "<group>";
@@ -490,6 +496,7 @@
 				CD50AD1119C6E77E00CC8860 /* AFURLSessionManager.m in Sources */,
 				CDC18AED19C2D470009E55F5 /* Report.m in Sources */,
 				CD50AD9B19C6E77E00CC8860 /* UIAlertView+AFNetworking.m in Sources */,
+				CD50ADBE19C717E000CC8860 /* ContactItem.m in Sources */,
 				CDC18AF619C30C7E009E55F5 /* NewsItem.m in Sources */,
 				CD50AD0519C6E77E00CC8860 /* AFHTTPSessionManager.m in Sources */,
 				CD50AD9D19C6E77E00CC8860 /* UIButton+AFNetworking.m in Sources */,
@@ -522,6 +529,7 @@
 				CD50ADA619C6E77E00CC8860 /* UIWebView+AFNetworking.m in Sources */,
 				CD50AD0E19C6E77E00CC8860 /* AFURLRequestSerialization.m in Sources */,
 				CD50ADA419C6E77E00CC8860 /* UIRefreshControl+AFNetworking.m in Sources */,
+				CD50ADBF19C717E000CC8860 /* ContactItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
