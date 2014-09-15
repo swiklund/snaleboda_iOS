@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Contacs : UIViewController
+@interface Contacs : UITableViewController
 
 @end

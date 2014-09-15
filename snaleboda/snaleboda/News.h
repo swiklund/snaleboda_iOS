@@ -11,8 +11,10 @@
 @interface News : UITableViewController
 
 @property NSMutableArray *newsItems;
+@property int contentMax;
 
-- (void)getNewsFromUrl:(NSString*)URL;
+- (void)getNewsFromService;
+
 
 
 @end

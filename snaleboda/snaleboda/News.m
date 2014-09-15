@@ -19,21 +19,11 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.contentMax = 200;  //Max antal chars i content-text
     self.newsItems = [[NSMutableArray alloc] init];
     
-    [self getNewsFromUrl:@"dfljh"];
-
-   /* NewsItem *item1 = [[NewsItem alloc] init];
-    item1.itemTitle = @"This is title";
-    item1.itemText = @"Another is text ljsf göabg ökabgöj aöskhb asd ökbjasd öfkb aöbf j dsd adsfds d df adf sdf d adfdsf dfa adf dff ssse sfdg sfdg sfdg sfg sfg sfg sfg sfg sfg sfg sfg fg sdfg sfg sfg sfg sfg sfg sfg sfg sfg sdfg sdfg sfg sfg sfg sfg sfg sfg sfg sfg sg sfg sgf sfg sdg sg sfg sfg sfg sfg sfg sfg sg sfg ";
-    [self.newsItems addObject:item1];
-    
-    NewsItem *item2 = [[NewsItem alloc] init];
-    item2.itemTitle = @"Another is title";
-    item2.itemText = @"Another is text ljsf göabg ökabgöj aöskhb asd ökbjasd öfkb aöbf j dsd adsfds d df adf sdf d adfdsf dfa adf dff sdfg sdfg sdfg sdfg sdfg sdfg sg ey erty erty erty ert yert y erty ety erty erty erty erty er yet ye yer yt ety ery ery t   ttyetyety  ety ety ey etyetyer yertye yety ert y etrye tye tyeyt ertyety ety y e yetryer tyery e y e tyety ey et y ety eryt etr y e ty e tryertyerty er ty e ty";
-    [self.newsItems addObject:item2];
-*/
-    
+    [self getNewsFromService];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -92,8 +82,8 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
     
     // Some subtitles can be really long, so only display the
     // first 200 characters
-    if (newsText.length > 200) {
-        newsText = [NSString stringWithFormat:@"%@...", [newsText substringToIndex:200]];
+    if (newsText.length > self.contentMax) {
+        newsText = [NSString stringWithFormat:@"%@...", [newsText substringToIndex:self.contentMax]];
     }
     
     [cell.newsText setText:newsText];
@@ -118,13 +108,15 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
 
 //Ta reda på height
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    int rowSize = 20;
-    int titleSize = 17;
+    int rowSize = 27;
+    int titleSize = 70;
     int charsPerRow = 41;
     
     int retHeight = 0;
     int numOfChars = [[self.newsItems[indexPath.row]content] length];  //Total length of item text
+    if( numOfChars > self.contentMax)numOfChars = self.contentMax;
     retHeight = numOfChars/charsPerRow;
+    if( retHeight < 1 )retHeight = 1;
     retHeight = retHeight*rowSize+titleSize;
     return retHeight;
 }
@@ -150,9 +142,9 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
     return size.height;
 }
 
--(void)getNewsFromUrl:(NSString*)URL
+-(void)getNewsFromService
 {
-   /* AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     
@@ -167,15 +159,18 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
     {
         NSLog(@"JSON: %@", responseObject);
 
-        for( id key in responseObject)
+        for( id item in responseObject)
         {
-            NewsItem *tempItem = [[NewsItem alloc] init];
-            tempItem = [responseObject objectForKey:key];
-            [self.newsItems addObject:tempItem];
+            NewsItem *newsItem = [[NewsItem alloc] init];
+            newsItem.title = [item objectForKey:@"title"];
+            newsItem.content = [item objectForKey:@"content"];
+
+            [self.newsItems addObject:newsItem];
         }
+        [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
-    }];*/
+    }];
 }
 
 @end
