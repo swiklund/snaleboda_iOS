@@ -10,7 +10,7 @@
 
 @interface NewsItem : NSObject
 
-@property NSString *itemTitle;
-@property NSString *itemText;
+@property NSString *title;
+@property NSString *content;
 
 @end

@@ -12,5 +12,8 @@
 
 @property NSMutableArray *newsItems;
 
+- (void)getNewsFromUrl:(NSString*)URL;
+
+
 @end
 
