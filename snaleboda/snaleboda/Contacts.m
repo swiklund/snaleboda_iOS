@@ -55,7 +55,8 @@ static NSString * const ContactsCellIdentifier = @"ContactsCell";
 
 - (void)setEmailForCell:(ContactsCell *)cell item:(ContactItem *)item {
         NSString *emailText = item.email?: NSLocalizedString(@"[Email not available]", nil);
-    [cell.Phone setText:emailText];
+    [cell.Email
+     setText:emailText];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -94,5 +95,10 @@ static NSString * const ContactsCellIdentifier = @"ContactsCell";
         NSLog(@"Error: %@", error);
     }];
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 130;
+}
+
 
 @end

@@ -65,14 +65,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactsCell" rowHeight="138" id="S96-RC-WiN" customClass="ContactsCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="138"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactsCell" rowHeight="131" id="S96-RC-WiN" customClass="ContactsCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S96-RC-WiN" id="u4f-SR-dta">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="137"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjS-y2-vq0">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="21" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjS-y2-vq0">
                                             <rect key="frame" x="20" y="20" width="280" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -86,7 +86,7 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFY-fh-HrP">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="21" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFY-fh-HrP">
                                             <rect key="frame" x="20" y="87" width="280" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -95,12 +95,12 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="tjS-y2-vq0" firstAttribute="top" secondItem="u4f-SR-dta" secondAttribute="top" constant="20" id="6vP-CQ-qfX"/>
-                                        <constraint firstItem="DFY-fh-HrP" firstAttribute="leading" secondItem="u4f-SR-dta" secondAttribute="leading" constant="20" id="JHe-hh-gub"/>
-                                        <constraint firstAttribute="bottom" secondItem="DFY-fh-HrP" secondAttribute="bottom" constant="29" id="OtY-iA-YTu"/>
-                                        <constraint firstItem="tjS-y2-vq0" firstAttribute="leading" secondItem="u4f-SR-dta" secondAttribute="leading" constant="20" id="VP9-xO-LIV"/>
-                                        <constraint firstAttribute="trailing" secondItem="tjS-y2-vq0" secondAttribute="trailing" constant="20" id="Zy9-bb-Ivy"/>
-                                        <constraint firstAttribute="trailing" secondItem="DFY-fh-HrP" secondAttribute="trailing" constant="20" id="yX4-TN-YlT"/>
+                                        <constraint firstItem="tjS-y2-vq0" firstAttribute="leading" secondItem="u4f-SR-dta" secondAttribute="leading" constant="20" id="0Fo-7h-ceY"/>
+                                        <constraint firstAttribute="trailing" secondItem="DFY-fh-HrP" secondAttribute="trailing" constant="20" id="AQa-0i-TwM"/>
+                                        <constraint firstItem="tjS-y2-vq0" firstAttribute="top" secondItem="u4f-SR-dta" secondAttribute="top" constant="20" id="Kg2-6b-fs5"/>
+                                        <constraint firstAttribute="trailing" secondItem="tjS-y2-vq0" secondAttribute="trailing" constant="20" id="WKS-37-TaG"/>
+                                        <constraint firstAttribute="bottom" secondItem="DFY-fh-HrP" secondAttribute="bottom" constant="22" id="a3c-Oi-56c"/>
+                                        <constraint firstItem="DFY-fh-HrP" firstAttribute="leading" secondItem="u4f-SR-dta" secondAttribute="leading" constant="20" id="lx8-Xl-GgT"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
