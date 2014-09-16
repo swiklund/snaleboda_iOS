@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ReportItem.h"
 
 @interface Report : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property ReportItem* reportItem;
 
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (strong, nonatomic) IBOutlet UITextView *description;

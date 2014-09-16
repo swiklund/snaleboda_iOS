@@ -7,6 +7,7 @@
 //
 
 #import "Report.h"
+#import "AFNetworking.h"
 
 @implementation Report
 
@@ -17,6 +18,8 @@
         
         [self cameraAlert];
     }
+    
+    self.reportItem = [[ReportItem alloc]init];
 }
 
 - (void)cameraAlert{
@@ -60,6 +63,33 @@
 }
 
 - (IBAction)sendReport:(UIButton *)sender {
+    
+    self.reportItem.Name = self.name.text;
+    self.reportItem.Description = self.description.text;
+    self.reportItem.Image = [self encodeToBase64String:self.imageView.image];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    NSDictionary* params = @{
+                             @"Name" : self.reportItem.Name,
+                             @"Description" : self.reportItem.Description,
+                             @"Image" : self.reportItem.Image,
+                             };
+    
+    NSString* serviceURL = @"https://snaleboda.azure-mobile.net/tables/incidents";
+    
+    [manager POST:serviceURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
+}
+
+- (NSString *)encodeToBase64String:(UIImage *)image {
+    return [UIImagePNGRepresentation(image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
@@ -76,5 +106,29 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
+
+/*-(void)postReport:(NSString*)URL
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    //[manager.requestSerializer setValue:@"Content-Type" forHTTPHeaderField:@"json"];
+    
+    NSDictionary* params = @{
+                             @"ApplicationId" : appInfo.uuid,
+                             @"Email" : visitor.email,
+                             @"Name" : visitor.name,
+                             };
+    
+    NSString* serviceURL = @"http://10.10.1.167/ScandinavianOutdoorGames.Visitor.WebServices/RegisterVisitor.svc/Register";
+    
+    [manager POST:serviceURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+*/
 
 @end

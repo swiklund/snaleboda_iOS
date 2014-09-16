@@ -59,6 +59,8 @@
 		CD50ADB819C6FD9200CC8860 /* ContactsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD50ADB619C6FD9200CC8860 /* ContactsCell.m */; };
 		CD50ADBE19C717E000CC8860 /* ContactItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CD50ADBD19C717E000CC8860 /* ContactItem.m */; };
 		CD50ADBF19C717E000CC8860 /* ContactItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CD50ADBD19C717E000CC8860 /* ContactItem.m */; };
+		CD50ADC219C85FF600CC8860 /* ReportItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CD50ADC119C85FF600CC8860 /* ReportItem.m */; };
+		CD50ADC319C85FF600CC8860 /* ReportItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CD50ADC119C85FF600CC8860 /* ReportItem.m */; };
 		CDC18AAB19C2CB6B009E55F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC18AAA19C2CB6B009E55F5 /* Foundation.framework */; };
 		CDC18AAD19C2CB6B009E55F5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC18AAC19C2CB6B009E55F5 /* CoreGraphics.framework */; };
 		CDC18AAF19C2CB6B009E55F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC18AAE19C2CB6B009E55F5 /* UIKit.framework */; };
@@ -137,6 +139,8 @@
 		CD50ADB619C6FD9200CC8860 /* ContactsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsCell.m; sourceTree = "<group>"; };
 		CD50ADBC19C717E000CC8860 /* ContactItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactItem.h; sourceTree = "<group>"; };
 		CD50ADBD19C717E000CC8860 /* ContactItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactItem.m; sourceTree = "<group>"; };
+		CD50ADC019C85FF600CC8860 /* ReportItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportItem.h; sourceTree = "<group>"; };
+		CD50ADC119C85FF600CC8860 /* ReportItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportItem.m; sourceTree = "<group>"; };
 		CDC18AA719C2CB6B009E55F5 /* snaleboda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snaleboda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC18AAA19C2CB6B009E55F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CDC18AAC19C2CB6B009E55F5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -287,6 +291,8 @@
 			children = (
 				CDC18AEB19C2D470009E55F5 /* Report.h */,
 				CDC18AEC19C2D470009E55F5 /* Report.m */,
+				CD50ADC019C85FF600CC8860 /* ReportItem.h */,
+				CD50ADC119C85FF600CC8860 /* ReportItem.m */,
 			);
 			name = Report;
 			sourceTree = "<group>";
@@ -477,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD50ADC219C85FF600CC8860 /* ReportItem.m in Sources */,
 				CD50AD9719C6E77E00CC8860 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				CD50AD0B19C6E77E00CC8860 /* AFURLConnectionOperation.m in Sources */,
 				CDC18ABB19C2CB6B009E55F5 /* AppDelegate.m in Sources */,
@@ -519,6 +526,7 @@
 				CDC18AD919C2CB6B009E55F5 /* snalebodaTests.m in Sources */,
 				CD50AD0819C6E77E00CC8860 /* AFNetworkReachabilityManager.m in Sources */,
 				CD50AD1219C6E77E00CC8860 /* AFURLSessionManager.m in Sources */,
+				CD50ADC319C85FF600CC8860 /* ReportItem.m in Sources */,
 				CD50ADB819C6FD9200CC8860 /* ContactsCell.m in Sources */,
 				CD50AD9819C6E77E00CC8860 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				CD50ADA219C6E77E00CC8860 /* UIProgressView+AFNetworking.m in Sources */,
