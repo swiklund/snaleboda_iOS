@@ -43,7 +43,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="A2E-aF-iRg"/>
+                    <tabBarItem key="tabBarItem" title="Nyheter" image="second" id="A2E-aF-iRg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xX-O4-gew" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,7 +97,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="msn-Um-wlQ"/>
+                    <tabBarItem key="tabBarItem" title="Kontakter" image="second" id="msn-Um-wlQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1OW-9U-SXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -176,7 +176,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.90196078431372551" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="hex-kc-iJi"/>
+                    <tabBarItem key="tabBarItem" title="Rapportera" image="second" id="hex-kc-iJi"/>
                     <connections>
                         <outlet property="description" destination="zFR-we-okg" id="XwX-Sh-R1S"/>
                         <outlet property="imageView" destination="oIb-NC-OIL" id="EZY-Nf-j3O"/>
@@ -213,6 +213,9 @@
             <point key="canvasLocation" x="12" y="-340"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="second" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
