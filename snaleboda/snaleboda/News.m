@@ -79,8 +79,8 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
     if( numOfChars > self.contentMax )numOfChars = self.contentMax;    //Content max initialized in viewdidload
     retHeight = numOfChars/charsPerRow;
     if( retHeight < 1 )retHeight = 1;
-    retHeight = retHeight*rowSize+titleSize;
-    return retHeight;
+    
+    return retHeight*rowSize+titleSize;
 }
 
 - (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
