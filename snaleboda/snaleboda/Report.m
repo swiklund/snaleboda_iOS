@@ -66,6 +66,9 @@
     
     self.reportItem.Name = self.name.text;
     self.reportItem.Description = self.description.text;
+    
+    //Komprimera
+    //self.imageView.image = [self compressForUpload:self.imageView.image :0.5];
     self.reportItem.Image = [self encodeToBase64String:self.imageView.image];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -80,7 +83,7 @@
     
     NSString* serviceURL = @"https://snaleboda.azure-mobile.net/tables/incidents";
     
-    [manager POST:serviceURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager PUT:serviceURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -105,6 +108,21 @@
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
+}
+
+- (UIImage *)compressForUpload:(UIImage *)original :(CGFloat)scale
+{
+    // Calculate new size given scale factor.
+    CGSize originalSize = original.size;
+    CGSize newSize = CGSizeMake(originalSize.width * scale, originalSize.height * scale);
+    
+    // Scale the original image to match the new size.
+    UIGraphicsBeginImageContext(newSize);
+    [original drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage* compressedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return compressedImage;
 }
 
 /*-(void)postReport:(NSString*)URL
