@@ -11,6 +11,8 @@
 
 @implementation Report
 
+@synthesize name, description;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -19,7 +21,25 @@
         [self cameraAlert];
     }
     
-    self.reportItem = [[ReportItem alloc]init];
+    //self.reportItem = [[ReportItem alloc]init];
+}
+
+//Cancel keyboard from textview
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range  replacementText:(NSString *)text
+{
+    if (range.length==0) {
+        if ([text isEqualToString:@"\n"]) {
+            [textView resignFirstResponder];
+            return NO;
+        }
+    }   return YES;
+}
+
+//Cancel keyboard from textfield
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)cameraAlert{
@@ -64,26 +84,26 @@
 
 - (IBAction)sendReport:(UIButton *)sender {
     
-    self.reportItem.Name = self.name.text;
-    self.reportItem.Description = self.description.text;
+    //self.reportItem.Name = self.name.text;
+    //self.reportItem.Description = self.description.text;
     
-    //Komprimera
-    //self.imageView.image = [self compressForUpload:self.imageView.image :0.5];
-    self.reportItem.Image = [self encodeToBase64String:self.imageView.image];
+    //Image scale down
+    self.imageView.image = [self compressForUpload:self.imageView.image :0.5];
+    //self.reportItem.Image = [self encodeToBase64String:self.imageView.image];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     
     NSDictionary* params = @{
-                             @"Name" : self.reportItem.Name,
-                             @"Description" : self.reportItem.Description,
-                             @"Image" : self.reportItem.Image,
+                             @"Name" : self.name.text,
+                             @"Description" : self.description.text,
+                             @"Image" : [self encodeToBase64String:self.imageView.image],
                              };
     
     NSString* serviceURL = @"https://snaleboda.azure-mobile.net/tables/incidents";
     
-    [manager PUT:serviceURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:serviceURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);

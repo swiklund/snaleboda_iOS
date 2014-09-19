@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ReportItem.h"
 
-@interface Report : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-
-@property ReportItem* reportItem;
+@interface Report : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (strong, nonatomic) IBOutlet UITextView *description;
@@ -20,5 +18,8 @@
 - (IBAction)takePhoto:(UIButton *)sender;
 - (IBAction)selectPhoto:(UIButton *)sender;
 - (IBAction)sendReport:(UIButton *)sender;
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
+
 
 @end
