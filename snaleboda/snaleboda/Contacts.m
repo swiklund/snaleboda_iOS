@@ -18,19 +18,16 @@ static NSString * const ContactsCellIdentifier = @"ContactsCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //self.contentMax = 200;  //Max num of chars in content-text
     self.contactItems = [[NSMutableArray alloc] init];
     
     [self getNewsFromService];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
     return [self.contactItems count];
 }
 

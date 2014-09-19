@@ -20,8 +20,6 @@
         
         [self cameraAlert];
     }
-    
-    //self.reportItem = [[ReportItem alloc]init];
 }
 
 //Cancel keyboard from textview
@@ -84,13 +82,10 @@
 
 - (IBAction)sendReport:(UIButton *)sender {
     
-    //self.reportItem.Name = self.name.text;
-    //self.reportItem.Description = self.description.text;
-    
     //Image scale down
     self.imageView.image = [self compressForUpload:self.imageView.image :0.5];
-    //self.reportItem.Image = [self encodeToBase64String:self.imageView.image];
     
+    //Post with AFNetworking
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -144,29 +139,5 @@
     
     return compressedImage;
 }
-
-/*-(void)postReport:(NSString*)URL
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    
-    //[manager.requestSerializer setValue:@"Content-Type" forHTTPHeaderField:@"json"];
-    
-    NSDictionary* params = @{
-                             @"ApplicationId" : appInfo.uuid,
-                             @"Email" : visitor.email,
-                             @"Name" : visitor.name,
-                             };
-    
-    NSString* serviceURL = @"http://10.10.1.167/ScandinavianOutdoorGames.Visitor.WebServices/RegisterVisitor.svc/Register";
-    
-    [manager POST:serviceURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-}
-*/
 
 @end

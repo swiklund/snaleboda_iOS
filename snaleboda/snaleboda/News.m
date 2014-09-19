@@ -26,12 +26,10 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
     return [self.newsItems count];
 }
 
@@ -39,7 +37,7 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
     
     NewsItem *item = self.newsItems[indexPath.row];
     [self setTitleForCell:cell item:item];
-    [self setSubtitleForCell:cell item:item];
+    [self setTextForCell:cell item:item];
 }
 
 - (void)setTitleForCell:(NewsCell *)cell item:(NewsItem *)item {
@@ -47,11 +45,10 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
     [cell.titleLabel setText:title];
 }
 
-- (void)setSubtitleForCell:(NewsCell *)cell item:(NewsItem *)item {
+- (void)setTextForCell:(NewsCell *)cell item:(NewsItem *)item {
     NSString *newsText = item.content?: NSLocalizedString(@"[Text not available]", nil);
     
-    // Some subtitles can be really long, so only display the
-    // first 200 characters
+    // Some textscan be really long, only display the first 200 characters
     if (newsText.length > self.contentMax) {
         newsText = [NSString stringWithFormat:@"%@...", [newsText substringToIndex:self.contentMax]];
     }
@@ -108,10 +105,6 @@ static NSString * const NewsCellIdentifier = @"NewsCell";
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     
-    //[manager.requestSerializer setValue:@"Content-Type" forHTTPHeaderField:@"json"];
-    
-    //NSDictionary* params = [self createPointOfInterest:URL];
-    //NSString* serviceURL = @"http://sog.devburk.com/RegisterVisitor.svc/Register";
     
     NSString* serviceURL = @"https://snaleboda.azure-mobile.net/tables/news";
     
